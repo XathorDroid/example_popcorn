@@ -1,4 +1,4 @@
-package com.xathordroid.popcorn.retrofit
+package com.xathordroid.popcorn.retrofit.models
 
 data class Movie(
     val adult: Boolean,
