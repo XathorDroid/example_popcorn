@@ -31,8 +31,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     def retrofitVersion = '2.9.0'
     def okhttpVersion = '4.5.0'
 
@@ -58,4 +56,9 @@ dependencies {
         exclude module: 'okhttp'
     }
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation("io.coil-kt:coil:1.1.1")
 }
