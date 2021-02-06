@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.xathordroid.popcorn.R
+import com.xathordroid.popcorn.common.Constantes
 import com.xathordroid.popcorn.retrofit.models.Movie
 
 class MovieRecyclerViewAdapter : RecyclerView.Adapter<MovieRecyclerViewAdapter.ViewHolder>() {
@@ -23,6 +26,11 @@ class MovieRecyclerViewAdapter : RecyclerView.Adapter<MovieRecyclerViewAdapter.V
         val item = movies[position]
         holder.tvTitle.text = item.title
         holder.tvRating.text = item.vote_average.toString()
+        holder.ivPhoto.load(Constantes.IMAGE_BASE_URL + item.poster_path) {
+            crossfade(true)
+            placeholder(R.drawable.ic_movie)
+            transformations(CircleCropTransformation())
+        }
     }
 
     override fun getItemCount(): Int = movies.size
